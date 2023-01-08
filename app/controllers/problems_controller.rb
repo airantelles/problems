@@ -10,10 +10,7 @@ class ProblemsController < ApplicationController
       next if num + nums.max < target
       nums.each_with_index.each do |n, i|
         next if index == i
-        sum_numbers = num + n
-        if sum_numbers == target
-          return [index, i]
-        end
+        return [index, i] if num + n == target
       end
     end
   end
